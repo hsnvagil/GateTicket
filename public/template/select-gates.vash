@@ -1,0 +1,12 @@
+ @if(model.length > 0){
+ @model.forEach(gate => {
+    <div class="custom-control custom-switch">
+        <input type="checkbox" onclick='add()' class="custom-control-input" id="@gate.id">
+        <label class="custom-control-label" for="@gate.id">@gate.name</label>
+    </div>
+})
+} else {
+    <div class="text-center">
+        <span>Gates is empty</span>
+    </div>
+}

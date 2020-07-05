@@ -1,0 +1,56 @@
+.main {
+  margin: 0 auto;
+}
+
+.main * {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main .container-login {
+  min-height: 100vh;
+  background: #f2f2f2;
+  padding: 15px;
+}
+
+.main .container-login .wrap-login {
+  width: 450px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 77px 55px 33px 55px;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main .container-login .wrap-login form .form-title {
+  font-size: 30px;
+  color: #1C2A48;
+  line-height: 1.2;
+}
+
+.main .container-login .wrap-login form .form-title i {
+  font-size: 60px;
+}
+
+.main .container-login .wrap-login form input:focus:not([readonly]) + label {
+  color: #1C2A48 !important;
+}
+
+.main .container-login .wrap-login form input:focus:not([readonly]) {
+  border: 1px solid #1C2A48 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: 0 !important;
+}
+
+.main .container-login .wrap-login form .btn-toggle-pass {
+  border: none;
+  position: absolute;
+  top: 11px;
+  background: transparent;
+  right: 6px;
+}
+
+.main .container-login .wrap-login form .btn-toggle-pass:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=login-style.css.map */

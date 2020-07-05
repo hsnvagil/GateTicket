@@ -1,0 +1,182 @@
+<!doctype html>
+<html ">
+
+<head>
+	<title>Visitors</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="/css/navbar.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Bootstrap CSS -->	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark mdb-color darken-3 ">
+		<a class="navbar-brand pl-0 font-weight-bolder" href="#">Gate-Ticket</a>
+		<button class="navbar-toggler third-button" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent22" aria-controls="navbarSupportedContent22" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<div class="animated-icon3"><span></span><span></span><span></span></div>
+		</button>
+
+		<div class="collapse navbar-collapse text-center" id="navbarSupportedContent22">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Visitors<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="\gates">Gates</a>
+				</li>
+			</ul>
+			<a id="logout" class="btn  btn-sm pr-3 pl-3">
+          		<i class="fas fa-sign-out-alt p-0 m-0"></i> Log out
+        	</a>
+		</div>
+	</nav>
+
+
+	<main class="container mt-5 mb-5">
+		<div class="table-wrapper-scroll-y my-custom-scrollbar">
+			@if(model.length > 0)
+			{
+			<table class="table table-striped table-hover mb-0">
+				<thead>
+					<tr>
+						<th style="width:60px;" scope="col">Id</th>
+						<th style="width:80px;" scope="col">Photo</th>
+						<th scope="col">Name</th>
+						<th scope="col">Surname</th>
+						<th scope="col">Phone</th>
+						<th scope="col">Gates</th>
+					</tr>
+				</thead>
+				<tbody>
+					@model.forEach(item => {
+					<tr>
+						<td id="td-id">@item.id</td>
+						<td id="td-photo">
+							<img class="rounded-circle" src="@item.photo">
+						</td>
+						<td id="td-name">@item.name</td>
+						<td id="td-surname">@item.surname</td>
+						<td id="td-phone">@item.phone</td>
+						<td id="td-gates">@item.gates</td>
+					</tr>
+					})
+				</tbody>
+			</table>
+			}
+			else{
+			<div class="text-center">
+				<p class="display-4">Visitors table is empty</p>
+			</div>
+			}
+		</div>
+		<ul class='custom-menu'>
+			<li data-action="edit">Edit</li>
+			<li data-action="remove">Remove</li>
+			<li data-action="pass">Pass</li>
+		</ul>
+	</main>
+
+
+
+
+	<div class="modal fade" id="add-visitor-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 id="modal-title" class="modal-title w-100 font-weight-bold text-capitalize">Add visitor</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body mx-3">
+					<div class="md-form md-outline mb-4">
+						<input autocomplete="off" type="text" id="visitor-name" class="form-control">
+						<label data-error="wrong" data-success="right" for="visitor-name">Visitor's name</label>
+					</div>
+					<div class="md-form md-outline mb-4">
+						<input autocomplete="off" type="text" id="visitor-surname" class="form-control">
+						<label data-error="wrong" data-success="right" for="visitor-surname">Visitor's
+							surname</label>
+					</div>
+					<div class="md-form md-outline mb-4">
+						<input autocomplete="off" type="text" id="visitor-phone" class="form-control">
+						<label data-error="wrong" data-success="right" for="visitor-phone">Visitor's phone</label>
+					</div>
+					<div class="md-form md-outline mb-4">
+						<input disabled autocomplete="off" type="text" id="gates-input" class="form-control">
+						<button id="add-gate-modal-btn"
+							style="outline:0 !important; box-shadow: none; border: 1px solid #e0e0e0 ;"
+							class="btn btn-light w-100 m-0 mt-2 indigo lighten-5 text-dark">Choose gates</button>
+					</div>
+
+					<div class="modal fade" id="visitor-add-gate-modal" tabindex="-1" role="dialog"
+						aria-labelledby="myModalLabel" aria-hidden="true">
+
+						<div class="modal-dialog modal-sm" role="document">
+							<div class="modal-content">
+								<div class="modal-header text-center">
+									<h4 class="modal-title w-100" id="myModalLabel">Select Gates</h4>
+									<button type="button" class="close" data-number="2" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div id="select-gates-body" class="modal-body">
+                                    
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+						</div>
+						<form enctype="multipart/form-data" id="the-form" class="custom-file">
+							<input type="file" accept="image/*" name="up-img" class="custom-file-input " id="file-id"
+								aria-describedby="inputGroupFileAddon01">
+							<label class="custom-file-label overflow-hidden" for="file-id">Choose file</label>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer d-flex justify-content-center">
+					<button id="save-btn" class="btn mdb-color darken-3 text-light">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<a class="float position-fixed text-center rounded-circle" id="float">
+		<i class="fa fa-plus my-float text-light"></i>
+	</a>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js">
+	</script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js">
+	</script>
+	<script src="/js/visitors.js"></script>
+</body>
+
+</html>

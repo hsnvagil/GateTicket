@@ -1,0 +1,115 @@
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+body .navbar .navbar-brand {
+  padding-left: 2%;
+}
+
+body .navbar .navbar-toggler-icon .span {
+  height: 3px;
+  background: #cccccc;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  margin: 3px 5px;
+}
+
+body .navbar .navbar-toggler {
+  outline: 0 !important;
+}
+
+body .navbar .navbar-toggler .animated-icon1,
+body .navbar .navbar-toggler .animated-icon2,
+body .navbar .navbar-toggler .animated-icon3 {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+body .navbar .navbar-toggler .animated-icon1 span,
+body .navbar .navbar-toggler .animated-icon2 span,
+body .navbar .navbar-toggler .animated-icon3 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+body .navbar .navbar-toggler .animated-icon3 span {
+  background: #f3e5f5;
+}
+
+body .navbar .navbar-toggler .animated-icon3 span:nth-child(1) {
+  top: 0;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
+
+body .navbar .navbar-toggler .animated-icon3 span:nth-child(2) {
+  top: 10px;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
+
+body .navbar .navbar-toggler .animated-icon3 span:nth-child(3) {
+  top: 20px;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
+
+body .navbar .navbar-toggler .animated-icon3.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0;
+  left: 8px;
+}
+
+body .navbar .navbar-toggler .animated-icon3.open span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+
+body .navbar .navbar-toggler .animated-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 21px;
+  left: 8px;
+}
+
+body .navbar .navbar-collapse .active a {
+  color: #D0D6E2 !important;
+}
+
+body .navbar .navbar-collapse #logout {
+  background-color: #33405B;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    margin-top: 3%;
+  }
+  .navbar-nav {
+    margin-right: 0;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */

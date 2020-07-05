@@ -1,0 +1,115 @@
+.container {
+    .my-custom-scrollbar {
+        display: block;
+        position: relative; 
+        width: auto;
+        max-height: 555px;   
+        overflow-y: auto;
+
+        img {
+            width: 60px !important;
+            height: 60px !important;
+        }
+
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+            background-color: #c0d1ed;
+        }
+
+        th,
+        td {
+            vertical-align: middle !important;
+            text-align: center !important;
+        }
+
+        td{
+            padding: 5px !important;
+        }
+
+        thead tr th {
+            position: sticky !important;
+            top: -2px;  
+            background: #374f83;
+            color: #ffffff;
+            z-index: 5;
+        }
+    }
+
+    .custom-menu {
+        display: none;
+        z-index: 1000;
+        position: absolute;
+        overflow: hidden;
+        border: 1px solid #CCC;
+        white-space: nowrap;
+        font-family: sans-serif;
+        background: #FFF;
+        color: #333;
+        border-radius: 5px;
+        padding: 0;
+    }
+
+    .custom-menu li {
+        padding: 8px 12px;
+        cursor: pointer;
+        list-style-type: none;
+        transition: all .3s ease;
+        user-select: none;
+    }
+
+    .custom-menu li:hover {
+        background-color: #c0d1ed;
+    }
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #666B7A #DEDEDE;
+}
+
+.float {
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 25px;
+    background-color: #1C2A48;
+    z-index: 6;
+    box-shadow: 2px 2px 3px #999;
+
+    &:hover .my-float {
+        color: #D0D6E2;
+        transform: rotateZ(0.5turn);
+    }
+
+
+    .my-float {
+        margin-top: 22px;
+        transition: all 0.5s;
+    }
+
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #666B7A;
+}
+
+input:focus:not([readonly])+label {
+    color: #1C2A48 !important;
+}
+
+input:focus:not([readonly]) {
+    border: 1px solid #1C2A48 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+}
