@@ -1,1 +1,1 @@
-# gate-ticket
+# GateTicket
